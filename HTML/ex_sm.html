@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Modal | Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        .create1{
+    display: none;
+    border: 1px solid black;
+    box-shadow: 0px 5px 10px 2px black;
+    animation-name: modalopen !important;
+    animation-duration: 4s !important;
+}
+#closeBtn{
+    float: right;
+}
+h4{
+    margin-top: 10px !important;
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    padding: 10px 10px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+/* @keyframes modalopen {
+    from{
+       border: 2px solid black;
+    }
+    to{
+        border: 2px solid blue;
+    }
+} */
+    </style>
+</head>
+<body>
+    <div class="section" id="frame">
+    <div class="container list-group mt-2">
+        <h1 class="list-group-item">Simple Modal</h1>
+    </div>
+    <div class="container">
+        <button class="btn btn-primary" id="modalBtn">Click here</button>
+    </div>
+    <div class="container mt-2 create1" id="modal">
+        <div class="container">
+            <h4>Modal Header<button class="btn btn-outline-primary" id="closeBtn">&times;</button></h4>
+            <div class="form-group">
+                <label>First Name :</label>
+                <input type="text" placeholder="Add First Name" id="fn" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Last Name :</label>
+                <input type="text" placeholder="Add Last Name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Email :</label>
+                <textarea placeholder="Add Message :)" class="form-control"></textarea>
+            </div>
+            <div class="checkbox">
+                <input type="checkbox">
+                <label>I Agree</label>
+            </div>
+            <button style="margin: 10px;" class="btn btn-outline-primary btn-sm" id="button">Submit</button>
+        </div>
+    </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        const modalBtn = document.getElementById('modalBtn');
+const modal = document.getElementById('modal');
+const closeBtn = document.getElementById('closeBtn');
+const button = document.getElementById('button');
+const fn = document.getElementById('fn');
+modalBtn.addEventListener('click', openModal);
+function openModal(){
+    modal.style.display = 'block';
+}
+closeBtn.addEventListener('click', closeModal);
+function closeModal(){
+    modal.style.display = 'none';
+}
+button.addEventListener('click', submitted);
+function submitted(){
+    button.textContent = 'Submitted';
+    alert('Your Details Successfully Submitted :)');
+}
+
+    </script>
+    <script src="/bootstrap_5.2.2/js/bootstrap.min.js"></script>
+</body>
+</html>
